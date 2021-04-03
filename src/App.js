@@ -1,11 +1,10 @@
 import './App.css';
+import Layout from "./components/Layout";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Wellness Whisper</h1>
-      </header>
+    <div>
+      <Layout />
     </div>
   );
 }
