@@ -1,7 +1,29 @@
+.banner {
+    width: 100%;
+    height: 7rem;
+    background-color: #006D77;
+    display: flex;
+    align-items: center;
+    padding-right: 1rem;
+    justify-content: center;
+    text-shadow: black 0.1em 0.1em 0.2em;
+}
+
 .header {
     color: #006D77;
     display: flex;
     justify-content: center;
     margin: 10px;
     text-align: center;
+}
+
+#site-name {
+    color: aliceblue;
+    justify-content: center;
+    padding: 1rem;
+    text-align: center;
+}
+#subtitle {
+    text-shadow: grey 0.05em 0.05em 0.05em;
+    margin-top: 20px;
 }

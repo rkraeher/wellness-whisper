@@ -1,10 +1,15 @@
 .media-body {
-    margin: 10px 0 0 10px;
+    margin: 10px 10px 0 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-self: center;
 }
 .media {
     margin: 10px;
-    /* background-color: #EDF6F9; */
+    padding: 5px;
+    background-color: #EDF6F9;
     color: #006D77;
+    border-radius: 5px;
 }
 
 .article-info {
@@ -13,12 +18,24 @@
 }
 
 .img {
-    display: flex;
     margin: 10px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+    border-radius: 5px;
+    align-self: center;
+}
+
+.img-sm {
+    display: none;
 }
 
 @media only screen and (max-width: 500px) {
-    .img {
+    .img-sm {
+        display: inline;
+    }
+    .img-lg {
         display: none;
+    }
+    .media-body {
+        justify-content: center;
     }
 }
