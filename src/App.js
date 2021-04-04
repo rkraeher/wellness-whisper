@@ -1,10 +1,13 @@
 import './App.css';
 import Layout from "./components/Layout";
+import NewsContextProvider from "./utils/NewsContext";
 
 function App() {
   return (
     <div>
-      <Layout />
+      <NewsContextProvider>
+        <Layout />
+      </NewsContextProvider>
     </div>
   );
 }

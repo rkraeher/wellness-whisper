@@ -1,34 +1,39 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Media from "react-bootstrap/Media";
-import 'holderjs';
-import { run as runHolder } from 'holderjs/holder';
+import placeholderImg from "../../images/mr-cup-fabien-barral-Mwuod2cm8g4-unsplash.jpg";
 import "./style.css";
+import DayJS from 'react-dayjs';
 
-function ArticleItem(props) {
 
-    useEffect(() => {
-        //This ensures that the placeholder image loads on component mount if the API returns no image. 
-        runHolder("ml-3");
-    });
-
+function ArticleItem({ data }) {
     return (
         <div>
             <Media className="media">
                 <img
-                    width={128}
-                    height={128}
-                    className="ml-3 img"
-                    src="holder.js/128x128"
-                    alt="Generic placeholder"
+                    width={206}
+                    height={160}
+                    className="ml-3 img img-lg"
+                    src={data.urlToImage ? data.urlToImage : placeholderImg}
+                    alt={data.urlToImage ? "Follow article link for image alt property." : "No image found. Placeholder image."}
                 />
                 <Media.Body>
-                    <h5>Headline Headline  Headline Headline Headline Headline  </h5>
-                    <p>
-                        Article summary / beginning of article / Article summary / beginning of article / Article summary / beginning of article /
-                        Article summary / beginning of article / Article summary / beginning of article / Article summary / beginning of article
-                    </p>
+                    <img
+                        width={206}
+                        height={123}
+                        className="img img-sm"
+                        src={data.urlToImage ? data.urlToImage : placeholderImg}
+                        alt={data.urlToImage ? "Follow article link for image alt property." : "No image found. Placeholder image."}
+                    />
+                    <h5>{data.title ? data.title : "Headline unavailable."}</h5>
+                    <p>{data.description ? data.description : "Article summary unavailable."}</p>
                     <p className="article-info">
-                        <a href="#" >Publication link </a>&nbsp;| Author | Date/time
+                        <a target="_blank"
+                            rel="noreferrer"
+                            href={data.url ? data.url : "#"}>
+                            {data.url ? "Read more" : "Link unavailable"}
+                        </a>&nbsp;|
+                            &nbsp;{data.source.name ? data.source.name : "Source name unavailable"} |
+                            &nbsp;{data.publishedAt ? <DayJS format="MM-DD-YYYY">{data.publishedAt}</DayJS> : "Date unavailable."}
                     </p>
                 </Media.Body>
             </Media>
