@@ -14,7 +14,7 @@ Wellness Whisper is a searchable web app focusing on health-related news.
 Clone the repo, install dependencies and run on local host.
 
 ## Usage
-[Visit the site.](https://rkraeher.github.io/wellness-whisper/). Because of NewsAPI free-tier policies, in order to make requests you must run the site from local host. 
+[Visit the site.](https://rkraeher.github.io/wellness-whisper/) Because of NewsAPI free-tier policies, in order to make requests you must run the site from local host. 
 
 ## Technologies
 React, Node, [NewsAPI v2](https://newsapi.org/), DayJS, Bootstrap
