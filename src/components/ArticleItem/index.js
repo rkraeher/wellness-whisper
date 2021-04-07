@@ -6,40 +6,39 @@ import Image from "../Image";
 import "./style.css";
 
 function ArticleItem({ data }) {
+    const imgData = {
+        large: {
+            height: 160,
+            class: "img-lg",
+        },
+        small: {
+            height: 123,
+            class: "img-sm",
+        }
+    };
+
     return (
         <div>
             <Media className="media">
                 {data.image !== undefined ?
-                    <Image
-                        width={206}
-                        height={160}
-                        classProp="img-lg"
+                    <Image data={imgData.large}
                         srcProp={data.image.contentUrl}
                         altProp={data.image.contentUrl}
                     />
                     :
-                    <Image
-                        width={206}
-                        height={160}
-                        classProp="img-lg"
+                    <Image data={imgData.large}
                         srcProp={placeholderImg}
                         altProp="Placeholder newspaper stack."
                     />
                 }
                 <Media.Body>
                     {data.image !== undefined ?
-                        <Image
-                            width={206}
-                            height={123}
-                            classProp="img-sm"
+                        <Image data={imgData.small}
                             srcProp={data.image.contentUrl}
                             altProp={data.image.contentUrl}
                         />
                         :
-                        <Image
-                            width={206}
-                            height={123}
-                            classProp="img-sm"
+                        <Image data={imgData.small}
                             srcProp={placeholderImg}
                             altProp="Placeholder newspaper stack."
                         />
@@ -47,6 +46,7 @@ function ArticleItem({ data }) {
                     <h5>{data.name ? data.name : "Headline unavailable."}</h5>
                     <p>&nbsp;{data.description ? data.description : "Article summary unavailable."}</p>
                     <p className="article-info">
+
                         <a target="_blank"
                             rel="noreferrer"
                             href={data.url ? data.url : "#"}>
