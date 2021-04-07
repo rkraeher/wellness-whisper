@@ -1,24 +1,24 @@
 {
   "files": {
     "main.css": "/wellness-whisper/static/css/main.26ce393b.chunk.css",
-    "main.js": "/wellness-whisper/static/js/main.a93e2b99.chunk.js",
-    "main.js.map": "/wellness-whisper/static/js/main.a93e2b99.chunk.js.map",
+    "main.js": "/wellness-whisper/static/js/main.49d471a0.chunk.js",
+    "main.js.map": "/wellness-whisper/static/js/main.49d471a0.chunk.js.map",
     "runtime-main.js": "/wellness-whisper/static/js/runtime-main.37bbcb42.js",
     "runtime-main.js.map": "/wellness-whisper/static/js/runtime-main.37bbcb42.js.map",
     "static/css/2.4c97ca4f.chunk.css": "/wellness-whisper/static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.91e4a9d2.chunk.js": "/wellness-whisper/static/js/2.91e4a9d2.chunk.js",
-    "static/js/2.91e4a9d2.chunk.js.map": "/wellness-whisper/static/js/2.91e4a9d2.chunk.js.map",
+    "static/js/2.366523fc.chunk.js": "/wellness-whisper/static/js/2.366523fc.chunk.js",
+    "static/js/2.366523fc.chunk.js.map": "/wellness-whisper/static/js/2.366523fc.chunk.js.map",
     "index.html": "/wellness-whisper/index.html",
     "static/css/2.4c97ca4f.chunk.css.map": "/wellness-whisper/static/css/2.4c97ca4f.chunk.css.map",
     "static/css/main.26ce393b.chunk.css.map": "/wellness-whisper/static/css/main.26ce393b.chunk.css.map",
-    "static/js/2.91e4a9d2.chunk.js.LICENSE.txt": "/wellness-whisper/static/js/2.91e4a9d2.chunk.js.LICENSE.txt",
+    "static/js/2.366523fc.chunk.js.LICENSE.txt": "/wellness-whisper/static/js/2.366523fc.chunk.js.LICENSE.txt",
     "static/media/mr-cup-fabien-barral-Mwuod2cm8g4-unsplash.4f8cc8c3.jpg": "/wellness-whisper/static/media/mr-cup-fabien-barral-Mwuod2cm8g4-unsplash.4f8cc8c3.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.37bbcb42.js",
     "static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.91e4a9d2.chunk.js",
+    "static/js/2.366523fc.chunk.js",
     "static/css/main.26ce393b.chunk.css",
-    "static/js/main.a93e2b99.chunk.js"
+    "static/js/main.49d471a0.chunk.js"
   ]
 }
