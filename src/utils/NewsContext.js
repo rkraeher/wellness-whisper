@@ -28,7 +28,7 @@ const reducer = (state, action) => {
 }
 
 const NewsContextProvider = (props) => {
-  const [data] = useState();
+  const [data] = useState([]);
   const [state, dispatch] = useReducer(reducer, data);
 
   return (

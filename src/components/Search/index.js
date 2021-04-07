@@ -8,16 +8,11 @@ const Search = () => {
   const [searchValue, setSearchValue] = useState("");
   const [state, dispatch] = useContext(NewsContext);
   const apiKey = process.env.REACT_APP_API_KEY;
-
-  //TODO: convert these fetch requests to async functions
+  const APP_FRONT_PAGE = "https://api.bing.microsoft.com/v7.0/news/search?q=progressive+news&originalImg=true"
+  const SEARCH_NEWS = `https://api.bing.microsoft.com/v7.0/news/search?q=${searchValue}&originalImg=true`
 
   useEffect(() => {
-    axios
-      .get(
-        `https://newsapi.org/v2/top-headlines?country=us&category=health&apiKey=${apiKey}`
-      )
-      .then((response) => dispatch({ type: HEADLINES, payload: response.data }))
-      .catch((error) => console.log(error));
+    loadHeadlines();
   }, []);
 
   const handleSearchInputChanges = (e) => {
@@ -28,16 +23,38 @@ const Search = () => {
     setSearchValue("")
   }
 
-  const callSearchFunction = (e) => {
+  const loadHeadlines = async () => {
+    try {
+      const resp = await axios({
+        method: 'get',
+        url: APP_FRONT_PAGE,
+        headers: {
+          "Ocp-Apim-Subscription-Key": apiKey
+        }
+      });
+      return dispatch({ type: HEADLINES, payload: resp.data.value });
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const callSearchFunction = async (e) => {
     e.preventDefault();
-    axios.get(
-      `https://newsapi.org/v2/everything?q=${searchValue}&sortBy=popularity&apiKey=${apiKey}`
-    )
-      .then((response) => dispatch({ type: SEARCH, payload: response.data }))
-      .then(() => dispatch({ type: KEYWORD, payload: searchValue }))
-      .then(() => resetInputField())
-      .catch((error) => console.log(error));
-  }
+    try {
+      const searchResults = await axios({
+        method: 'get',
+        url: SEARCH_NEWS,
+        headers: {
+          "Ocp-Apim-Subscription-Key": apiKey
+        }
+      });
+      dispatch({ type: SEARCH, payload: searchResults.data.value });
+      dispatch({ type: KEYWORD, payload: searchValue });
+      resetInputField();
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   return (
     <form className="search-form">

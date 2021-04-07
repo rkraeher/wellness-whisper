@@ -11,12 +11,12 @@ function Layout() {
         <div>
             <div className="banner">
                 {/* Logo */}
-                <h1 id="site-name">Wellness Whisper</h1>
+                <h1 id="site-name">Well Whisper</h1>
             </div>
             <Container>
                 <Row >
                     <Col className="header">
-                        <h2 id="subtitle">Your source for healthcare news</h2>
+                        <h2 id="subtitle">Your progressive newsfeed</h2>
                     </Col>
                 </Row>
                 <Row>

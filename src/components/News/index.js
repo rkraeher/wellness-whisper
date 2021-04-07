@@ -7,11 +7,11 @@ function News() {
   const [state] = useContext(NewsContext);
   return (
     <div>
-      {state
-        ? state.data.articles.map((news) => (
+      {!state.data ? <h3 className="header">Loading...</h3>
+        : state.data.map((news) => (
           <ArticleItem data={news} key={news.url} />
         ))
-        : <h3 className="header">Loading...</h3>}
+      }
     </div>
   );
 }
