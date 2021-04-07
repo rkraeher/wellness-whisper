@@ -2,45 +2,47 @@ import React from 'react';
 import Media from "react-bootstrap/Media";
 import placeholderImg from "../../images/mr-cup-fabien-barral-Mwuod2cm8g4-unsplash.jpg";
 import DayJS from "react-dayjs";
+import Image from "../Image";
 import "./style.css";
 
 function ArticleItem({ data }) {
     return (
         <div>
             <Media className="media">
-                {/* Make this a component */}
-                {/* Use thumbnail instead? */}
-                {/* also do error handling on the link */}
-                {/* Below chain ? : operators */}
                 {data.image !== undefined ?
-                    <img
+                    <Image
                         width={206}
                         height={160}
-                        className="ml-3 img img-lg"
-                        src={data.image.contentUrl ?? placeholderImg}
-                        alt={data.image.contentUrl ? "Follow article link for image alt property." : "No image found. Placeholder image."}
+                        classProp="img-lg"
+                        srcProp={data.image.contentUrl}
+                        altProp={data.image.contentUrl}
                     />
                     :
-                    <p>...</p>
+                    <Image
+                        width={206}
+                        height={160}
+                        classProp="img-lg"
+                        srcProp={placeholderImg}
+                        altProp="Placeholder newspaper stack."
+                    />
                 }
                 <Media.Body>
-                    {/* <img
-                        width={206}
-                        height={123}
-                        className="img img-sm"
-                        src={data.image.contentUrl ?? data.image.contentUrl ?? placeholderImg}
-                        alt={data.image.contentUrl ? "Follow article link for image alt property." : "No image found. Placeholder image."}
-                    /> */}
                     {data.image !== undefined ?
-                        <img
+                        <Image
                             width={206}
                             height={123}
-                            className="ml-3 img img-sm"
-                            src={data.image.contentUrl ?? placeholderImg}
-                            alt={data.image.contentUrl ? "Follow article link for image alt property." : "No image found. Placeholder image."}
+                            classProp="img-sm"
+                            srcProp={data.image.contentUrl}
+                            altProp={data.image.contentUrl}
                         />
                         :
-                        <p>...</p>
+                        <Image
+                            width={206}
+                            height={123}
+                            classProp="img-sm"
+                            srcProp={placeholderImg}
+                            altProp="Placeholder newspaper stack."
+                        />
                     }
                     <h5>{data.name ? data.name : "Headline unavailable."}</h5>
                     <p>&nbsp;{data.description ? data.description : "Article summary unavailable."}</p>
